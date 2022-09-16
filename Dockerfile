@@ -11,6 +11,7 @@ WORKDIR application
 COPY --from=build application/dependencies/ ./
 COPY --from=build application/spring-boot-loader/ ./
 COPY --from=build application/snapshot-dependencies/ ./
+RUN true
 COPY --from=build application/application/ ./
 RUN true
 ENTRYPOINT ["java", "org.springframework.boot.loader.JarLauncher"]
